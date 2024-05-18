@@ -1,11 +1,11 @@
 import jwt, datetime, os
 from flask import Flask, request
-from flaskmysqldb import MySQL
+from flask_mysqldb import MySQL
 
-server = Flask(name)
+server = Flask(__name__)
 mysql = MySQL(server)
 
-config
+#config
 server.config["MYSQLHOST"] = os.environ.get("MYSQLHOST")
 server.config["MYSQLUSER"] = os.environ.get("MYSQL_USER")
 server.config["MYSQL_PASSWORD"] = os.environ.get("MYSQL_PASSWORD")
@@ -19,6 +19,8 @@ def login():
         return "missing credentials", 401
 
     # check db for username and password
+
+
 cur = mysql.connection.cursor()
 res = cur.execute(
     "SELECT email, password FROM user WHERE email=%s", (auth.username,)
@@ -69,5 +71,7 @@ def createJWT(username, secret, authz):
         algorithm="HS256",
     )
 
-if __name == "__main":
+if __name__ == "__main__":
     server.run(host="0.0.0.0", port=5000)
+
+
