@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: converter
-          image: victormosquera/converter
+          image: camilo1914z/converter
           envFrom:
             - configMapRef:
                 name: converter-configmap

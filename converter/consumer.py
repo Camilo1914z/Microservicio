@@ -1,4 +1,7 @@
-import pika, sys, os, time
+import pika
+import sys
+import os
+import time
 from pymongo import MongoClient
 import gridfs
 from convert import to_mp3
@@ -31,7 +34,7 @@ def main():
 
     channel.start_consuming()
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:

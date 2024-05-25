@@ -40,4 +40,4 @@ def start(message, fs_videos, fs_mp3s, channel):
         )
     except Exception as err:
         fs_mp3s.delete(fid)
-        return "failed to publish message"  
+        return "failed to publish message"      
